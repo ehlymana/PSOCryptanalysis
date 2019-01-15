@@ -425,16 +425,17 @@ class Particle:
 
 
 class SwarmOfParticles:
-    def __init__(self, numberOfParticles, dimensionality, numberOfInformants, lowerBound, upperBound):
+    def __init__(self, numberOfParticles, message, numberOfInformants, lowerBound, upperBound):
+        calculateMessageFrequencies(MESSAGE)
         self.numberOfParticles = numberOfParticles
-        self.dimensionality = dimensionality
+        self.dimensionality = len(message)
         self.numberOfInformants = numberOfInformants
         self.particles = []
         # initialize all particles in the swarm
         for i in range(0, numberOfParticles):
             coordinates = transpozition(MESSAGE)
             initialVelocity = []
-            for j in range(0, dimensionality):
+            for j in range(0, len(message)):
                 initialVelocity.append(True)
             self.particles.append(Particle(coordinates, initialVelocity, lowerBound, upperBound))
         # initialize the best values
@@ -475,18 +476,20 @@ class SwarmOfParticles:
         return change
 
 
-# calculate frequencies in the message - for test purposes
 messageCharacters = []
 messageBigrams = []
 messageTrigrams = []
 messageQuadgrams = []
 intMessage = []
-for i in range(0, len(MESSAGE)):
-    intMessage.append(ord(MESSAGE[i]) - ord('A'))
-findFrequenciesCharacters(intMessage, messageCharacters)
-findFrequenciesBigrams(intMessage, messageBigrams)
-findFrequenciesTrigrams(intMessage, messageTrigrams)
-findFrequenciesQuadgrams(intMessage, messageQuadgrams)
+
+# calculate frequencies in the message - for test purposes
+def calculateMessageFrequencies(message):
+    for i in range(0, len(message)):
+        intMessage.append(ord(message[i]) - ord('A'))
+    findFrequenciesCharacters(intMessage, messageCharacters)
+    findFrequenciesBigrams(intMessage, messageBigrams)
+    findFrequenciesTrigrams(intMessage, messageTrigrams)
+    findFrequenciesQuadgrams(intMessage, messageQuadgrams)
 
 
 ''''# calculate monogram frequencies
@@ -526,8 +529,9 @@ for i in range(0, len(sortedBigramFrequencies)):
     sortedBigramFrequencies[i].sort()'''
 
 
-                        # particles,         dimensionality,     informants, lowerBound, upperBound
-swarm = SwarmOfParticles(   20,             len(MESSAGE),            4,         0,          25)
+                        # particles,         message,     informants, lowerBound, upperBound
+'''swarm = SwarmOfParticles(   20,              MESSAGE,         4,         0,          25)
+calculateMessageFrequencies(MESSAGE)
 print("Initialization. Best Solution: {}.".format(swarm.bestValue))
 # solutions are kept as integers so we print the string version of it
 print(toString(swarm.bestCoordinates))
@@ -541,4 +545,4 @@ for i in range(0, 100):
     print(toString(swarm.bestCoordinates))
 a = swarm.bestValue
 b = toString(swarm.bestCoordinates)
-print("Decoded message: {}.".format(toString(swarm.bestCoordinates)))
+print("Decoded message: {}.".format(toString(swarm.bestCoordinates)))'''
