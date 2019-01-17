@@ -12,6 +12,9 @@
 \renewcommand{\tablename}{Tabela}
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
 
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
@@ -371,9 +374,31 @@ Postoji više vrsta pomijeranja čestica u problemskom prostoru: \\
 
 \section{Simulacijski rezultati}
 
+\subsection{Implementacija rješenja}
+
+Prvi korak u implementaciji rješenja je izračunavanje prirodnih frekvencija. Neophodne frekvencije učitavaju se iz \textit{file}-ova \texttt{monograms.txt, bigrams.txt, trigrams.txt} i \texttt{quadgrams.txt} (za testne svrhe, zbog kratkoće poruka njihove frekvencije uvijek previše odstupaju od prirodnih, pa je u tom slučaju izvršeno računanje prirodne frekvencije samo za karaktere poruke). \\
+
+Izračunavanje prirodnih frekvencija karaktera implementirano je u okviru funkcija: \texttt{natural- Monograms, naturalBigrams, naturalTrigrams} i \texttt{naturalQuadgrams}. Izračunavanje frekvencija za datu poruku implementirano je u okviru funkcije \texttt{calculateMessageFrequencies}, koja zatim poziva funkcije \texttt{findFrequenciesCharacters, findFrequenciesBigrams, findFrequen- ciesTrigrams} i \texttt{findFrequenciesQuadgrams} koje vrše pojedinačne izračune. \\
+
+Funkcija \texttt{toString} vrši pretvaranje niza cjelobrojnih vrijednosti (što je način čuvanja koordinata rješenja) u niz karaktera, odnosno poruku. \\
+
+Funkcija \texttt{transpozition} vrši kreiranje kodirane poruke, odnosno pravi nasumičnu konfiguraciju poruke koja se sastoji od istih karaktera, no koji se nalaze na različitim mjestima. \\
+
+Funkcije \texttt{CaesarCode} i \texttt{CaesarDecode} vrše kodiranje i dekodiranje poruke respektivno korištenjem Cezarovog koda s nasumičnom vrijednošću ključa. \\
+
+Funkcije kriterija, odnosno funkcije koje vrše izračun greške - odstupanja od prirodnih frekvencija su funkcije \texttt{criterionFunctionBigrams, criterionFunctionTrigrams} i \texttt{criterion \\ FunctionQuadgrams}. \\
+
+Funkcije koje vrše ažuriranje brzine čestice ovisno o tome da li se neki karakter ili blok karaktera nalaze na ispravnoj poziciji su funkcije \texttt{findCorrectBigrams, findCorrectTrigrams} i \texttt{find- CorrectQuadgrams}. \\
+
+Funkcije koje vrše pronalazak prvog ili neispravnog bloka karakteru sa specificiranim rednim brojem su funkcije \texttt{findIncorrectBigram, findIncorrectTrigram} i \texttt{findIncorrectQuadgram}. \\
+
+Klasa \texttt{Particle}, osim konstruktora, posjeduje i metodu \texttt{move} koja, uz korištenje prethodno navedenih funkcija i poštivanje koncepata koji su prethodno opisani u radu, vrši pomijeranje čestice, promjenu režima rada (da li se posmatraju \textit{bigram}-i ili veći blokovi karaktera) i ažuriranje svoje brzine. \\
+
+Klasa \texttt{SwarmOfParticles}, osim inicijalizacije, posjeduje i funkciju \texttt{moveAllParticles}, u okviru koje se vrši jedna iteracija algoritma - pomijeranje svih čestica i ažuriranje svih neophodnih parametara.
+
 \subsection{Postavka simulacija}
 
-Prethodno opisani algoritam implementiran je u programskom jeziku \textit{Python}. Cijela implementacija rješavanja problema kriptoanalize koristeći PSO algoritam dostupna je na: \href{https://github.com/ehlymana/PSOCryptanalysis}{https://github.com/ehlymana/PSOCryptanalysis}. Izgled simulacijske aplikacije prikazan je na Slici \ref{gui}.
+Prethodno opisani algoritam implementiran je u programskom jeziku \textit{Python}. Cijela implementacija rješavanja problema kriptoanalize koristeći PSO algoritam dostupna je na: \\ \href{https://github.com/ehlymana/PSOCryptanalysis}{https://github.com/ehlymana/PSOCryptanalysis}. Izgled simulacijske aplikacije prikazan je na Slici \ref{gui}.
 
 \begin{figure}[H]
 
@@ -394,51 +419,128 @@ Aplikacija je testirana na više načina, koristeći različite kriterije za per
 
 \subsection{Rezultati izvršavanja za različite dužine poruka}
 
-Kako bi se dobili što relevantniji i konzistentniji rezultati, za ovu vrstu testiranja korišten je konstantan broj čestica (\texttt{40}), informanata (\texttt{4}) i iteracija (\texttt{100}). Taj broj odabran je u skladu s preporukama za optimalne vrijednosti \ref{samke}, kako bi vjerovatnoća za pronalaskom rješenja bila ista (i što veća) bez obzira na varijabilnu dužinu poruka. \\
+Kako bi se dobili što relevantniji i konzistentniji rezultati, za ovu vrstu testiranja korišten je \textbf{konstantan broj} čestica (\texttt{40}), informanata (\texttt{4}) i iteracija (\texttt{50}). Taj broj odabran je u skladu s preporukama za \textbf{optimalne vrijednosti} \cite{samke}, kako bi vjerovatnoća za pronalaskom rješenja bila ista (i što veća) bez obzira na varijabilnu dužinu poruka. \\
 
-Simulacije su za sve dužine znakova pokrenute po \texttt{10} puta, kako bi se smanjio utjecaj randomizma (koji je prisutan u ovom algoritmu) na konačne performanse. Rezultati simulacije prikazani su u Tabeli \ref{duzine}.
+Simulacije su za dužine znakova manje od 10 pokrenute po \texttt{10} puta, kako bi se smanjio utjecaj randomizma (koji je prisutan u ovom algoritmu) na konačne performanse. Zbog predugog trajanja izvršavanja, simulacije za dužine znakova veće od 9 pokrenute su \textbf{samo jednom}. Rezultati simulacije prikazani su u Tabeli \ref{poruke}:
 
-\begin{table}
+\begin{itemize}
+\renewcommand\labelitemi{--}
+
+\item Sve poruke predstavljaju validne riječi, ili nizove riječi engleskog jezika;
+\item Dužina poruka varira između 1 i 15 (vrijeme izvršavanja za veće dužine poruka je predugo);
+\item Najbolja finalna rješenja u skladu su s vrijednošću greške, pri čemu je broj karaktera koji su pogrešno pozicionirani jednak vrijednosti greške;
+\item Broj iteracija za dolazak do rješenja povećava se s povećanjem dužine poruke, zbog drastičnog povećanja broja permutacija;
+\item Vrijeme izvršavanja mjereno je u sekundama, te je vidljivo njegovo drastično povećanje za veću dužinu poruka.
+
+\end{itemize}
+
+\begin{table}[H]
 \centering
-\begin{tabular}{ | c | c | c | c |} \hline
-\textbf{Poruka} 			& \textbf{Dužina poruke}	&{Finalno rješenje}			&{Vrijednost greške} \\ \hline
-A 						& 1						& A 						& 0					\\ \hline
-TO 						& 2						& TO 						& 0					\\ \hline
-THE						& 3						& THE						& 0					\\ \hline
-STAR					& 4						& STAR						& 0					\\ \hline
-APRIL					& 5						& APRIL						& 0					\\ \hline
-BIRDIE					& 6						& BIRDIE					& 0					\\ \hline
-SOMEDAY				& 7						& SOMEDAY					& 0					\\ \hline
-COMPUTER				& 8						& COMPUTER				& 0					\\ \hline
-YESTERDAY				& 9						& YESTERDAY				& 0					\\ \hline
-BEPEACEFUL				& 10					&							&					\\ \hline
-INDIANOCEAN			& 11					&							&					\\ \hline
-THEGOLDENSUN			& 12					&							&					\\ \hline
-CONSTELLATION			& 13					&							&					\\ \hline
-CHEYENNEANTHEM		& 14					&							&					\\ \hline
-SEAGULLJONATHAN		& 15					&							&					\\ \hline
+\begin{tabular}{ | l | p{1.5 cm} | l | p{2 cm} | p{1.5 cm} | p{1.5 cm} |} \hline
+\textbf{Poruka} 			& \textbf{Dužina poruke}	& \textbf{Finalno rješenje}		& \textbf{Vrijednost greške} 	& \textbf{Broj iteracija}	& \textbf{Vrijeme izvršavanja}	\\ \hline
+A 						& 1						& A 						& 0							& 0						& 0.338						\\ \hline
+TO 						& 2						& TO 						& 0							& 0						& 0.435						\\ \hline
+THE						& 3						& THE						& 0							& 0						& 0.456 						\\ \hline
+STAR					& 4						& STAR						& 0							& 0						& 0.314						\\ \hline
+APRIL					& 5						& APRIL						& 0							& 0						& 0.404						\\ \hline
+BIRDIE					& 6						& BIRDIE					& 0							& 0.4					& 0.666						\\ \hline
+SOMEDAY				& 7						& SOMEDAY					& 0							& 1.1					& 0.684						\\ \hline
+COMPUTER				& 8						& COMPUTER				& 0							& 2.6					& 1.242						\\ \hline
+YESTERDAY				& 9						& YESTERDAY				& 0							& 5.8					& 67.471					\\ \hline
+BEPEACEFUL				& 10					& BEPEACEFUL				& 0							& 6						& 16.435					\\ \hline
+SHAKESPEARE			& 11					& SHAKESPEARE 				& 0							& 8						& 21.911					\\ \hline
+THEGOLDENSUN			& 12					& THEGOLDENSUN			& 0							& 9						& 48.137					\\ \hline
+CONSTELLATION			& 13					& CONSTELATIONL			& 1							& 50					& 1310.583					\\ \hline
+CHEYENNEANTHEM		& 14					& MYTINDIMESPENG	 		& 1							& 50					& 2394.452					\\ \hline
+SEAGULLJONATHAN		& 15					& AGULLJONHANATSE 		& 2							& 50					& 3489.189					\\ \hline
 \end{tabular}
-\caption{Različite vrijednosti grešaka za različite dužine poruka}
+\caption{Rezultati testiranja za različite dužine poruka}
 \label{poruke}
 \end{table}
 
 \subsection{Rezultati izvršavanja za različite vrijednosti parametara}
 
+U svrhu testiranja, izvršena je modifikacija sljedećih parametara:
 
+\begin{itemize}
+\renewcommand\labelitemi{--}
 
-\subsection{Performanse algoritma}
+\item \textbf{Broj iteracija}: U ovisnosti od broja iteracija, vrijednost pronađenog rješenja trebala bi se mijenjati na način da je tačnost za veći broj iteracija veća;
+\item \textbf{Broj čestica}: Za manji broj čestica, biti će generisan manji broj početnih konfiguracija, zbog čega će biti teže formirati ispravne konfiguracije (potreba za mijenjanjem \textit{quadgram}-a dovesti će do povećanja trajanja izvršavanja programa);
+\item \textbf{Broj informanata}: Veći broj informanata trebao bi osigurati brže poboljšanje tačnosti rješenja, zbog veće mogućnosti da je neko od informanata (kojih ima više) u ispravnoj konfiguraciji.
 
+\end{itemize}
 
+Svi ostali parametri imaju standardne vrijednosti (broj čestica: \texttt{40}, broj informanata: \texttt{4}, dužina poruke: \texttt{8}, broj iteracija: \texttt{40}), kako bi njihov utjecaj na izvršavanje programa bio minimalan. Svaka simulacija pokrenuta je 10 puta, te rezultati predstavljaju srednju vrijednost rezultata tokom svih 10 pokretanja. Rezultati simulacije prikazani su u Tabelama \ref{iteracije} - \ref{informanti}:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{| c | c | c |} \hline
+\textbf{Broj iteracija}		& \textbf{Srednja vrijednost greške}	& \textbf{Vrijeme izvršavanja}		\\ \hline
+1						& 1.7								& 0.503								\\ \hline
+10						& 0									& 0.668								\\ \hline
+25						& 0									& 1.375								\\ \hline
+50						& 0									& 0.81								\\ \hline
+100						& 0									& 0.82								\\ \hline
+250						& 0									& 1.677								\\ \hline
+500						& 0									& 0.595								\\ \hline
+1000					& 0									& 0.625								\\ \hline
+\end{tabular}
+\caption{Rezultati testiranja za različit broj iteracija}
+\label{iteracije}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{| c | c | c |} \hline
+\textbf{Broj čestica}		& \textbf{Srednja vrijednost greške}	& \textbf{Vrijeme izvršavanja}		\\ \hline
+1						& 1.3								& 38.213							\\ \hline
+2						& 0.6								& 103.673							\\ \hline
+5						& 0.1								& 14.487							\\ \hline
+10						& 0									& 0.477								\\ \hline
+25						& 0									& 0.65								\\ \hline
+50						& 0									& 0.666								\\ \hline
+100						& 0									& 0.94								\\ \hline
+125						& 0									& 0.914								\\ \hline
+150						& 0									& 0.979								\\ \hline
+\end{tabular}
+\caption{Rezultati testiranja za različit broj čestica}
+\label{cestice}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{| c | c | c |} \hline
+\textbf{Broj informanata}	& \textbf{Srednja vrijednost greške}	& \textbf{Vrijeme izvršavanja}	\\ \hline
+1						& 0									& 0.845							\\ \hline
+2						& 0									& 0.522							\\ \hline
+3						& 0									& 1.781							\\ \hline
+4						& 0									& 0.613							\\ \hline
+5						& 0									& 0.926							\\ \hline
+10						& 0									& 1.018							\\ \hline
+25						& 0									& 1.848							\\ \hline
+\end{tabular}
+\caption{Rezultati testiranja za različit broj informanata}
+\label{informanti}
+\end{table}
 
 \subsection{Zaključci}
 
+Nakon provedenih testiranja, mogu se lako identificirati dobre i loše strane implementirane aplikacije. Korištenje \textit{bigram}-a, \textit{trigram}-a i \textit{quadgram}-a omogućava \textbf{gotovo 100 \%-nu tačnost} pri dekodiranju poruka, no iz tog razloga vremenske performanse algoritma su \textbf{veoma loše}, pri čemu za dekodiranje poruke od 15 karaktera treba \textbf{oko 60 minuta}. \\
 
+Iako na tačnost dekodiranja utječu parametri poput broja čestica, iteracija i informanata, njihova uloga \textbf{nije presudna}, te je praćenje preporučenih vrijednosti dovoljno (iako su i mnogo manje veličine dovoljne) kako bi se poruke ovih veličina uspješno dekodirale. Povećanje broja iteracija neko vrijeme poboljšava performanse algoritma, nakon čega one ostaju performanse (razlika između 500 i 1000 iteracija je neznatna). S druge strane, povećanje broja čestica drastično smanjuje trajanje izvršavanja, budući da se vjerovatnoća da će se neka od čestica brzo naći u tačnoj konfiguraciji povećava s brojem čestica. No, za prevelik broj čestica performanse algoritma počinju da degradiraju, zbog čega ovaj broj ne smije biti ni preveliki (posebno s aspekta memorije). Povećanje broja informanata nema nekog značajnog utjecaja na izvršavanje programa.
 
 \newpage
 
 \section{Zaključak}
 
+PSO algoritam moguće je \textbf{uspješno iskoristiti} za dekodiranje šifrovanih poruka koristeći osobine prirodnih jezika (odnosno, prirodnu frekvenciju). Cezarov kod pokazao se kao \textbf{potpuno nevažan} za samo dekodiranje, jer je dovoljno pokrenuti funkciju za identifikaciju takvog kodiranja u poruci kako bi se dobili izvorni karakteri (koji su, naravno, transponirani, nakon čega kreće proces kriptoanalize koristeći prethodno opisane koncepte). No, kao ključni problem nameće se \textbf{vrijeme izvršavanja} algoritma, jer osobina PSO algoritma da se nakon nasumične incijalizacije vrijednosti čestica poboljšavaju ovisno o najboljim pronađenim \textbf{nije dovoljna} kako bi se prevazišli problemi proizvedeni kroz sam algoritam kriptoanalize. \\
 
+Prvobitni problem predstavlja \textbf{veličina problemskog prostora}, odnosno broj permutacija karaktera koji čine poruku, koji je već za male veličine poruka izrazito veliki, što drastično smanjuje vjerovatnoću da će bilo koja od inicijalnih vrijednosti čestica posjedovati bilo kakvu karakteristiku tačnog rješenja: tačne \textit{bigram}-e, \textit{trigram}-e ili čak \textit{quadgram}-e. PSO algoritam \textbf{nije namijenjen za rješavanje ovakvih problema}, posebno iz razloga što brzina ne predstavlja broj za koji se vrijednost rješenja povećava ili smanjuje, već je prilagođena tako da predstavlja vrijednost koja pokazuje da li je traženi karakter dio ispravne konfiguracije ili ga je potrebno ponovo permutirati. Informanti također pružaju \textbf{limitirane informacije} o boljim rješenjima, jer je sama veza između različitih rješenja nejasna: na nivou \textit{bigram}-a ili drugih blokova karaktera, informanti ne mogu dati mnogo korisnih informacija, jer su i njihove informacije samo parcijalno tačne, što može dovesti do degradacije rješenja. \\
+
+Drugi problem predstavlja \textbf{trajanje izvršavanja}, na koje uveliko utječe korištenje \textit{quadgram}-a u algoritmu, pri čemu se u svakoj iteraciji algoritma prolazi kroz četverostruku petlju (26$^4$), što drastično pogoršava performanse algoritma. No, s povećavanjem broja karaktera u poruci, korištenje manjih blokova karaktera jednostavno \textbf{nije dovoljno} da bi se dobili tačni rezultati (prevelika je vjerovatnoća da se više karaktera može naći u tako malim nizovima, te algoritam tvori pogrešne kombinacije koje imaju malu grešku s aspekta razlike u prirodnoj frekvenciji), zbog čega je ovaj koncept ugrađen u algoritam na samom početku razvoja. \\
+
+Za male dužine poruka, ovaj algoritam je sasvim dovoljan da se izvrši \textbf{egzaktna i brza kriptoanaliza}, no za veće dužine poruka, njegove performanse drastično degradiraju, iz kojeg razloga bi se problem \textit{quadgram}-a trebao prevazići koristeći \textbf{manje matrice}, budući da je većina elemenata u blokovskoj matrici približno jednaka nuli (naprimjer, \textit{quadgram} \texttt{YYBB} se nikako ne pojavljuje u engleskom jeziku). Iz tog razloga nema potrebe za vršenjem velikog broja poređenja s takvim vrijednostima, te bi se performanse algoritma mogle značajno poboljšati ukoliko se funkcija kriterija za \textit{quadgram}-e promijeni, kao i sam način čuvanja matrice s ovim koeficijentima.
 
 \newpage
 

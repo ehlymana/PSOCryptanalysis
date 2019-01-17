@@ -1,0 +1,109 @@
+* * * * * * * * * * * DIFFERENT PARTICLE NUMBERS * * * * * * * * * * *
+Number of particles: 1
+Iteration: 1 Decoded message: MEDAYOS Mistake: 2
+Iteration: 2 Decoded message: ESOMAYD Mistake: 3
+Iteration: 3 Decoded message: EDAYSOM Mistake: 1
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: MEDAYSO Mistake: 1
+Iteration: 6 Decoded message: YMEDSOA Mistake: 3
+Iteration: 7 Decoded message: MEDAYSO Mistake: 2
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: AYSOMED Mistake: 1
+Execution time: 382.1321475505829
+Number of particles: 2
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: EDAYSOM Mistake: 1
+Iteration: 3 Decoded message: AYSOMED Mistake: 1
+Iteration: 4 Decoded message: AYSOMED Mistake: 1
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: YOMEDAS Mistake: 2
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: EDAYSOM Mistake: 1
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 1036.725400686264
+Number of particles: 5
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 144.87089323997498
+Number of particles: 10
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 4.770025968551636
+Number of particles: 25
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 6.500173568725586
+Number of particles: 50
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 6.659519195556641
+Number of particles: 100
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 9.397778511047363
+Number of particles: 125
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 9.142884492874146
+Number of particles: 150
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 9.786186933517456

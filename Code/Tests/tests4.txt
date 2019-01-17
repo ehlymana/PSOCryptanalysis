@@ -1,0 +1,85 @@
+* * * * * * * * * * * DIFFERENT INFORMANT NUMBERS * * * * * * * * * * *
+Number of informants: 1
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 8.44641900062561
+Number of informants: 2
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 5.224783420562744
+Number of informants: 3
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 17.8095223903656
+Number of informants: 4
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 6.1251585483551025
+Number of informants: 5
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 9.2547447681427
+Number of informants: 10
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 10.183119535446167
+Number of informants: 25
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 18.475568532943726

@@ -28,6 +28,16 @@ There are three possible **criterion functions**:
 
 3. Coding and decoding the message using the **Caesar code** method.
 
+## The Code
+
+The code consists of three files:
+
+1. *cryptoPSO.py*: contains the algorithm;
+
+2. *gui.py*: contains the *Tkinter* User Interface for using the app;
+
+3. *tests.py*: contains the tests for the app.
+
 ## Additional information
 
 The goal of the algorithm is to **minimize** the criterion function (which describes the error between character block frequencies).

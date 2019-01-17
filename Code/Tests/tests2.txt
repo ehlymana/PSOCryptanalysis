@@ -1,0 +1,97 @@
+* * * * * * * * * * * DIFFERENT ITERATION NUMBERS * * * * * * * * * * *
+Number of iterations: 1
+Iteration: 1 Decoded message: EDAYOMS Mistake: 2
+Iteration: 2 Decoded message: OMEDSAY Mistake: 2
+Iteration: 3 Decoded message: YDASOME Mistake: 2
+Iteration: 4 Decoded message: SDAYOME Mistake: 2
+Iteration: 5 Decoded message: SYOMEDA Mistake: 2
+Iteration: 6 Decoded message: AYSOMED Mistake: 1
+Iteration: 7 Decoded message: DAYSOME Mistake: 1
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: MEYDASO Mistake: 3
+Iteration: 10 Decoded message: MEDAYOS Mistake: 2
+Execution time: 5.031468391418457
+Number of iterations: 10
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 6.6755805015563965
+Number of iterations: 25
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 13.753191232681274
+Number of iterations: 50
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 8.103447914123535
+Number of iterations: 100
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 8.202333927154541
+Number of iterations: 250
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 16.765475749969482
+Number of iterations: 500
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 5.954386949539185
+Number of iterations: 1000
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0
+Execution time: 6.2532806396484375

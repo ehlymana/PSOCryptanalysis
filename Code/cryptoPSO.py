@@ -1,10 +1,127 @@
 import random
-import copy
 
 SIMILARITY = 0.001
 
+messageCharacters = []
+messageBigrams = []
+messageTrigrams = []
+messageQuadgrams = []
+intMessage = []
+
+# calculate natural monogram frequencies
+def naturalMonograms(characters):
+    text_file = open("NaturalFrequencies/monograms.txt", "r")
+    lines = text_file.read().split("\n")
+    text_file.close()
+    characters.clear()
+    frequencies = []
+    for i in range(0, len(lines)):
+        frequencies.append(lines[i].split(" "))
+    frequencies.sort(key=lambda x: x[0])
+    sum = 0
+    for c in frequencies:
+        sum += int(c[1])
+    for c in characters:
+        characters.append(int(c[1]) / sum)
+
+
+# calculate natural bigram frequencies
+def naturalBigrams(bigrams):
+    text_file = open("NaturalFrequencies/bigrams.txt", "r")
+    lines = text_file.read().split("\n")
+    text_file.close()
+    bigrams.clear()
+    frequencies = []
+    for i in range(0, len(lines)):
+        frequencies.append(lines[i].split(" "))
+    frequencies.sort(key=lambda x: x[0])
+    sum = 0
+    for b in frequencies:
+        sum += int(b[1])
+    for i in range(0, len(frequencies)):
+        if i % 26 == 0:
+            bigrams.append([])
+        bigrams[int(i / 26)].append(int(frequencies[i][1]) / sum)
+
+
+# calculate natural trigram frequencies
+def naturalTrigrams(trigrams):
+    text_file = open("NaturalFrequencies/trigrams.txt", "r")
+    lines = text_file.read().split("\n")
+    text_file.close()
+    trigrams.clear()
+    frequencies = []
+    for i in range(0, len(lines)):
+        frequencies.append(lines[i].split(" "))
+    frequencies.sort(key=lambda x: x[0])
+    sum = 0
+    for t in frequencies:
+        sum += int(t[1])
+    j = 0
+    k = 0
+    for i in range(0, len(frequencies)):
+        if j == 0:
+            trigrams.append([])
+        if k == 0:
+            trigrams[j].append([])
+        trigrams[j][k].append(int(frequencies[i][1]) / sum)
+        k += 1
+        if k == 26:
+            k = 0
+            j += 1
+        if j == 26:
+            j = 0
+
+
+# calculate natural quadgram frequencies
+def naturalQuadgrams(quadgrams):
+    text_file = open("NaturalFrequencies/quadgrams.txt", "r")
+    lines = text_file.read().split("\n")
+    text_file.close()
+    quadgrams.clear()
+    frequencies = []
+    for i in range(0, len(lines)):
+        frequencies.append(lines[i].split(" "))
+    frequencies.sort(key=lambda x: x[0])
+    sum = 0
+    for t in frequencies:
+        sum += int(t[1])
+    j = 0
+    k = 0
+    l = 0
+    for i in range(0, len(frequencies)):
+        if j == 0:
+            quadgrams.append([])
+        if k == 0:
+            quadgrams[j].append([])
+        if l == 0:
+            quadgrams[j][k].append([])
+        quadgrams[j][k][l].append(int(frequencies[i][1]) / sum)
+        l += 1
+        if l == 26:
+            l = 0
+            k += 1
+        if k == 26:
+            k = 0
+            j += 1
+        if j == 26:
+            j = 0
+
+
+# calculate frequencies in the message - for test purposes
+def calculateMessageFrequencies(message):
+    intMessage.clear()
+    for i in range(0, len(message)):
+        intMessage.append(ord(message[i]) - ord('A'))
+    findFrequenciesCharacters(intMessage, messageCharacters)
+    findFrequenciesBigrams(intMessage, messageBigrams)
+    findFrequenciesTrigrams(intMessage, messageTrigrams)
+    findFrequenciesQuadgrams(intMessage, messageQuadgrams)
+
+
 # find frequencies of characters in a message
 def findFrequenciesCharacters(x, characters):
+    characters.clear()
     for i in range(0, 26):
         characters.append(0)
     for i in range(0, len(x)):
@@ -15,6 +132,7 @@ def findFrequenciesCharacters(x, characters):
 
 # find frequencies of bigrams in a message
 def findFrequenciesBigrams(x, bigrams):
+    bigrams.clear()
     for i in range(0, 26):
         bigrams.append([])
         for j in range(0, 26):
@@ -29,6 +147,7 @@ def findFrequenciesBigrams(x, bigrams):
 
 # find frequencies of trigrams in a message
 def findFrequenciesTrigrams(x, trigrams):
+    trigrams.clear()
     for i in range(0, 26):
         trigrams.append([])
         for j in range(0, 26):
@@ -46,6 +165,7 @@ def findFrequenciesTrigrams(x, trigrams):
 
 # find frequencies of quadgrams in a message
 def findFrequenciesQuadgrams(x, quadgrams):
+    quadgrams.clear()
     for i in range(0, 26):
         quadgrams.append([])
         for j in range(0, 26):
@@ -108,6 +228,7 @@ def CaesarCode(message):
     return newMessage
 
 
+# decode message coded using Caesar code
 def CaesarDecode(message):
     characters = []
     x = []
@@ -133,7 +254,7 @@ def CaesarDecode(message):
     return newMessage
 
 
-# calculate similarity between message monogram and bigram frequency and natural frequency
+# calculate similarity between message bigram frequency and natural frequency
 def criterionFunctionBigrams(x):
     bigrams = []
     findFrequenciesBigrams(x, bigrams)
@@ -145,6 +266,7 @@ def criterionFunctionBigrams(x):
     return f
 
 
+# calculate similarity between message trigram frequency and natural frequency
 def criterionFunctionTrigrams(x):
     trigrams = []
     findFrequenciesTrigrams(x, trigrams)
@@ -157,6 +279,7 @@ def criterionFunctionTrigrams(x):
     return f
 
 
+# calculate similarity between message quadgram frequency and natural frequency
 def criterionFunctionQuadgrams(x):
     quadgrams = []
     findFrequenciesQuadgrams(x, quadgrams)
@@ -168,6 +291,7 @@ def criterionFunctionQuadgrams(x):
                     if quadgrams[i][j][k][l] != 0 and abs(quadgrams[i][j][k][l] - messageQuadgrams[i][j][k][l]) > SIMILARITY:
                         f += 1
     return f
+
 
 # find any bigrams that are at the correct position
 def findCorrectBigrams(x, velocity):
@@ -417,7 +541,6 @@ class Particle:
                             permute.pop(k)
                             break
         # check if the particle moved to a better position
-        x = self.criterionFunction(self.position)
         if self.criterionFunction(self.position) < self.bestSolution:
             self.coordinatesOfBestSolution = self.position
             self.bestSolution = self.criterionFunction(self.position)
@@ -478,56 +601,3 @@ class SwarmOfParticles:
                 return change
         self.generation += 1
         return change
-
-
-messageCharacters = []
-messageBigrams = []
-messageTrigrams = []
-messageQuadgrams = []
-intMessage = []
-
-# calculate frequencies in the message - for test purposes
-def calculateMessageFrequencies(message):
-    for i in range(0, len(message)):
-        intMessage.append(ord(message[i]) - ord('A'))
-    findFrequenciesCharacters(intMessage, messageCharacters)
-    findFrequenciesBigrams(intMessage, messageBigrams)
-    findFrequenciesTrigrams(intMessage, messageTrigrams)
-    findFrequenciesQuadgrams(intMessage, messageQuadgrams)
-
-
-''''# calculate monogram frequencies
-text_file = open("monograms.txt", "r")
-lines = text_file.read().split("\n")
-text_file.close()
-characters = []
-for i in range(0, len(lines)):
-    characters.append(lines[i].split(" "))
-characters.sort(key=lambda x: x[0])
-sum = 0
-for c in characters:
-    sum += int(c[1])
-for c in characters:
-    messageCharacters.append(int(c[1]) / sum)
-    sortedCharacterFrequencies.append(int(c[1]) / sum)
-
-# calculate bigram frequencies
-text_file = open("bigrams.txt", "r")
-lines = text_file.read().split("\n")
-text_file.close()
-bigrams = []
-for i in range(0, len(lines)):
-    bigrams.append(lines[i].split(" "))
-bigrams.sort(key=lambda x: x[0])
-sum = 0
-for b in bigrams:
-    sum += int(b[1])
-for i in range(0, len(bigrams)):
-    if i % 26 == 0:
-        messageBigrams.append([])
-        sortedBigramFrequencies.append([])
-    messageBigrams[int(i / 26)].append(int(bigrams[i][1]) / sum)
-    sortedBigramFrequencies[int(i / 26)].append(int(bigrams[i][1]) / sum)
-sortedCharacterFrequencies.sort()
-for i in range(0, len(sortedBigramFrequencies)):
-    sortedBigramFrequencies[i].sort()'''

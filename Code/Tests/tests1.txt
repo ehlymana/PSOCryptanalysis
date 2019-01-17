@@ -1,0 +1,127 @@
+* * * * * * * * * * * DIFFERENT MESSAGE LENGTHS * * * * * * * * * * *
+String: A
+Iteration: 1 Decoded message: A Mistake: 0 Iterations necessary to solve: 0
+Iteration: 2 Decoded message: A Mistake: 0 Iterations necessary to solve: 0
+Iteration: 3 Decoded message: A Mistake: 0 Iterations necessary to solve: 0
+Iteration: 4 Decoded message: A Mistake: 0 Iterations necessary to solve: 0
+Iteration: 5 Decoded message: A Mistake: 0 Iterations necessary to solve: 0
+Iteration: 6 Decoded message: A Mistake: 0 Iterations necessary to solve: 0
+Iteration: 7 Decoded message: A Mistake: 0 Iterations necessary to solve: 0
+Iteration: 8 Decoded message: A Mistake: 0 Iterations necessary to solve: 0
+Iteration: 9 Decoded message: A Mistake: 0 Iterations necessary to solve: 0
+Iteration: 10 Decoded message: A Mistake: 0 Iterations necessary to solve: 0
+Execution time: 3.3761160373687744
+String: TO
+Iteration: 1 Decoded message: TO Mistake: 0 Iterations necessary to solve: 0
+Iteration: 2 Decoded message: TO Mistake: 0 Iterations necessary to solve: 0
+Iteration: 3 Decoded message: TO Mistake: 0 Iterations necessary to solve: 0
+Iteration: 4 Decoded message: TO Mistake: 0 Iterations necessary to solve: 0
+Iteration: 5 Decoded message: TO Mistake: 0 Iterations necessary to solve: 0
+Iteration: 6 Decoded message: TO Mistake: 0 Iterations necessary to solve: 0
+Iteration: 7 Decoded message: TO Mistake: 0 Iterations necessary to solve: 0
+Iteration: 8 Decoded message: TO Mistake: 0 Iterations necessary to solve: 0
+Iteration: 9 Decoded message: TO Mistake: 0 Iterations necessary to solve: 0
+Iteration: 10 Decoded message: TO Mistake: 0 Iterations necessary to solve: 0
+Execution time: 4.351364374160767
+String: THE
+Iteration: 1 Decoded message: THE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 2 Decoded message: THE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 3 Decoded message: THE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 4 Decoded message: THE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 5 Decoded message: THE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 6 Decoded message: THE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 7 Decoded message: THE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 8 Decoded message: THE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 9 Decoded message: THE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 10 Decoded message: THE Mistake: 0 Iterations necessary to solve: 0
+Execution time: 4.561038970947266
+String: STAR
+Iteration: 1 Decoded message: STAR Mistake: 0 Iterations necessary to solve: 0
+Iteration: 2 Decoded message: STAR Mistake: 0 Iterations necessary to solve: 0
+Iteration: 3 Decoded message: STAR Mistake: 0 Iterations necessary to solve: 0
+Iteration: 4 Decoded message: STAR Mistake: 0 Iterations necessary to solve: 0
+Iteration: 5 Decoded message: STAR Mistake: 0 Iterations necessary to solve: 0
+Iteration: 6 Decoded message: STAR Mistake: 0 Iterations necessary to solve: 0
+Iteration: 7 Decoded message: STAR Mistake: 0 Iterations necessary to solve: 0
+Iteration: 8 Decoded message: STAR Mistake: 0 Iterations necessary to solve: 0
+Iteration: 9 Decoded message: STAR Mistake: 0 Iterations necessary to solve: 0
+Iteration: 10 Decoded message: STAR Mistake: 0 Iterations necessary to solve: 0
+Execution time: 3.13611102104187
+String: APRIL
+Iteration: 1 Decoded message: APRIL Mistake: 0 Iterations necessary to solve: 0
+Iteration: 2 Decoded message: APRIL Mistake: 0 Iterations necessary to solve: 0
+Iteration: 3 Decoded message: APRIL Mistake: 0 Iterations necessary to solve: 0
+Iteration: 4 Decoded message: APRIL Mistake: 0 Iterations necessary to solve: 0
+Iteration: 5 Decoded message: APRIL Mistake: 0 Iterations necessary to solve: 0
+Iteration: 6 Decoded message: APRIL Mistake: 0 Iterations necessary to solve: 0
+Iteration: 7 Decoded message: APRIL Mistake: 0 Iterations necessary to solve: 0
+Iteration: 8 Decoded message: APRIL Mistake: 0 Iterations necessary to solve: 0
+Iteration: 9 Decoded message: APRIL Mistake: 0 Iterations necessary to solve: 0
+Iteration: 10 Decoded message: APRIL Mistake: 0 Iterations necessary to solve: 0
+Execution time: 4.03803277015686
+String: BIRDIE
+Iteration: 1 Decoded message: BIRDIE Mistake: 0 Iterations necessary to solve: 1
+Iteration: 2 Decoded message: BIRDIE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 3 Decoded message: BIRDIE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 4 Decoded message: BIRDIE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 5 Decoded message: BIRDIE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 6 Decoded message: BIRDIE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 7 Decoded message: BIRDIE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 8 Decoded message: BIRDIE Mistake: 0 Iterations necessary to solve: 1
+Iteration: 9 Decoded message: BIRDIE Mistake: 0 Iterations necessary to solve: 0
+Iteration: 10 Decoded message: BIRDIE Mistake: 0 Iterations necessary to solve: 2
+Execution time: 6.655953407287598
+String: SOMEDAY
+Iteration: 1 Decoded message: SOMEDAY Mistake: 0 Iterations necessary to solve: 2
+Iteration: 2 Decoded message: SOMEDAY Mistake: 0 Iterations necessary to solve: 1
+Iteration: 3 Decoded message: SOMEDAY Mistake: 0 Iterations necessary to solve: 2
+Iteration: 4 Decoded message: SOMEDAY Mistake: 0 Iterations necessary to solve: 0
+Iteration: 5 Decoded message: SOMEDAY Mistake: 0 Iterations necessary to solve: 1
+Iteration: 6 Decoded message: SOMEDAY Mistake: 0 Iterations necessary to solve: 1
+Iteration: 7 Decoded message: SOMEDAY Mistake: 0 Iterations necessary to solve: 1
+Iteration: 8 Decoded message: SOMEDAY Mistake: 0 Iterations necessary to solve: 1
+Iteration: 9 Decoded message: SOMEDAY Mistake: 0 Iterations necessary to solve: 1
+Iteration: 10 Decoded message: SOMEDAY Mistake: 0 Iterations necessary to solve: 1
+Execution time: 6.8378260135650635
+String: COMPUTER
+Iteration: 1 Decoded message: COMPUTER Mistake: 0 Iterations necessary to solve: 4
+Iteration: 2 Decoded message: COMPUTER Mistake: 0 Iterations necessary to solve: 3
+Iteration: 3 Decoded message: COMPUTER Mistake: 0 Iterations necessary to solve: 2
+Iteration: 4 Decoded message: COMPUTER Mistake: 0 Iterations necessary to solve: 1
+Iteration: 5 Decoded message: COMPUTER Mistake: 0 Iterations necessary to solve: 2
+Iteration: 6 Decoded message: COMPUTER Mistake: 0 Iterations necessary to solve: 3
+Iteration: 7 Decoded message: COMPUTER Mistake: 0 Iterations necessary to solve: 4
+Iteration: 8 Decoded message: COMPUTER Mistake: 0 Iterations necessary to solve: 3
+Iteration: 9 Decoded message: COMPUTER Mistake: 0 Iterations necessary to solve: 2
+Iteration: 10 Decoded message: COMPUTER Mistake: 0 Iterations necessary to solve: 2
+Execution time: 12.422044277191162
+String: YESTERDAY
+Iteration: 1 Decoded message: YESTERDAY Mistake: 0 Iterations necessary to solve: 3
+Iteration: 2 Decoded message: YESTERDAY Mistake: 0 Iterations necessary to solve: 2
+Iteration: 3 Decoded message: YESTERDAY Mistake: 0 Iterations necessary to solve: 9
+Iteration: 4 Decoded message: YESTERDAY Mistake: 0 Iterations necessary to solve: 2
+Iteration: 5 Decoded message: YESTERDAY Mistake: 0 Iterations necessary to solve: 3
+Iteration: 6 Decoded message: YESTERDAY Mistake: 0 Iterations necessary to solve: 5
+Iteration: 7 Decoded message: YESTERDAY Mistake: 0 Iterations necessary to solve: 6
+Iteration: 8 Decoded message: YESTERDAY Mistake: 0 Iterations necessary to solve: 22
+Iteration: 9 Decoded message: YESTERDAY Mistake: 0 Iterations necessary to solve: 1
+Iteration: 10 Decoded message: YESTERDAY Mistake: 0 Iterations necessary to solve: 5
+Execution time: 674.7118053436279
+String: BEPEACEFUL
+Decoded message: BEPEACEFUL Mistake: 0 Iterations necessary to solve: 6
+Execution time: 16.435144662857056
+String: SHAKESPEARE
+Decoded message: SHAKESPEARE Mistake: 0 Iterations necessary to solve: 8
+Execution time: 21.910861492156982
+String: THEGOLDENSUN
+Decoded message: THEGOLDENSUN Mistake: 0 Iterations necessary to solve: 9
+Execution time: 48.137266397476196
+String: CONSTELLATION
+Decoded message: CONSTELATIONL Mistake: 1 Iterations necessary to solve: 50
+Execution time: 1310.5839977264404
+String: SPENDINGMYTIME
+Decoded message: MYTINDIMESPENG Mistake: 1 Iterations necessary to solve: 50
+Execution time: 2394.452714204788
+String: SEAGULLJONATHAN
+Decoded message: AGULLJONHANATSE Mistake: 2 Iterations necessary to solve: 50
+Execution time: 3489.1890892982483

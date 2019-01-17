@@ -64,6 +64,7 @@ root = Tk()
 threads = Threads(root)
 
 # define all GUI components for parameter setup
+root.title("CryptoPSO")
 parametersLabel = Label(root, text = "Parameters Setup", font = 'Verdana 16 bold')
 particlesLabel = Label(root, text = "Number of particles:", font = 'Verdana 14')
 particlesEntry = Entry(root, width = 10)
