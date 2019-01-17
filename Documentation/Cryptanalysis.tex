@@ -48,7 +48,7 @@
 	Predmetni nastavnik:\par
 	v. prof. dr. \textsc{Samim Konjicija}, dipl. ing. el.
 	\vfill
-	{\large Decembar, 2018\par}
+	{\large Januar, 2019\par}
 \end{titlepage}
 
 \pagenumbering{gobble}
@@ -302,29 +302,17 @@ Postoje tri funkcije kriterija, koje se koriste u različitim dijelovima algorit
 f(x) = \sum_{i = 1}^{26}{\sum_{j = 1}^{26}{SDF[i, j] - DDF[i, j]}}
 \end{equation}
 
-\begin{equation*}
-i = 1, ..., n, j = 1, ..., m
-\end{equation*}
-
 \item \textit{Trigram} funkcija, koja vrši usporedbu da li se \textit{trigrami} u poruci razlikuju od standardne frekvencije \textit{trigrama}:
 
 \begin{equation}
 f(x) = \sum_{i = 1}^{26}{\sum_{j = 1}^{26}{\sum_{k = 1}^{26}{STF[i, j, k] - DTF[i, j, k]}}}
 \end{equation}
 
-\begin{equation*}
-i = 1, ..., n, j = 1, ..., m
-\end{equation*}
-
 \item \textit{Quadgram} funkcija, koja vrši usporedbu da li se \textit{quadgrami} u poruci razlikuju od standardne frekvencije \textit{quadgrama}:
 
 \begin{equation}
 f(x) = \sum_{i = 1}^{26}{\sum_{j = 1}^{26}{\sum_{k = 1}^{26}{\sum_{l = 1}^{26}{SQF[i, j, k, l] - DQF[i, j, k, l]}}}}
 \end{equation}
-
-\begin{equation*}
-i = 1, ..., n, j = 1, ..., m
-\end{equation*}
 
 \end{enumerate}
 
@@ -385,9 +373,60 @@ Postoji više vrsta pomijeranja čestica u problemskom prostoru: \\
 
 \subsection{Postavka simulacija}
 
-Cijela implementacija rješavanja problema kriptoanalize koristeći PSO algoritam dostupna je na: \href{https://github.com/ehlymana/PSOCryptanalysis}{https://github.com/ehlymana/PSOCryptanalysis}.
+Prethodno opisani algoritam implementiran je u programskom jeziku \textit{Python}. Cijela implementacija rješavanja problema kriptoanalize koristeći PSO algoritam dostupna je na: \href{https://github.com/ehlymana/PSOCryptanalysis}{https://github.com/ehlymana/PSOCryptanalysis}. Izgled simulacijske aplikacije prikazan je na Slici \ref{gui}.
 
-\subsection{Rezultati simulacija}
+\begin{figure}[H]
+
+\center
+\includegraphics[scale=0.7]{res/gui.png}
+\caption{Simulacijska aplikacija}
+\label{gui}
+
+\end{figure}
+
+Aplikacija prihvata samo riječi (ili više riječi bez razmaka) koje se sastoje od velikih slova engleskog alfabeta. Nakon unošenja početnih parametara (broj čestica u roju, broj informanata i broj iteracija) i pritiska na dugme \textbf{Start}, vrši se inicijalizacija početnog roja čestica te iterativno pomijeranje čestica u problemskom prostoru. \\
+
+Na ekranu se prikazuju rezultati izvršavanja algoritma u iterativnom postupku. Prikazuje se dekodirana trenutno najbolja poruka, vrijednost greške u odnosu na stvarnu vrijednost, kao i broj trenutno aktivnih čestica. \\
+
+U svakom trenutku moguće je prekinuti izvršavanje algoritma pritiskom na dugme \textbf{Stop}, u kojem slučaju se najbolje rješenje iz trenutne iteracije proglašava za finalno rješenje. \\
+
+Aplikacija je testirana na više načina, koristeći različite kriterije za performanse, koje će biti opisane u nastavku.
+
+\subsection{Rezultati izvršavanja za različite dužine poruka}
+
+Kako bi se dobili što relevantniji i konzistentniji rezultati, za ovu vrstu testiranja korišten je konstantan broj čestica (\texttt{40}), informanata (\texttt{4}) i iteracija (\texttt{100}). Taj broj odabran je u skladu s preporukama za optimalne vrijednosti \ref{samke}, kako bi vjerovatnoća za pronalaskom rješenja bila ista (i što veća) bez obzira na varijabilnu dužinu poruka. \\
+
+Simulacije su za sve dužine znakova pokrenute po \texttt{10} puta, kako bi se smanjio utjecaj randomizma (koji je prisutan u ovom algoritmu) na konačne performanse. Rezultati simulacije prikazani su u Tabeli \ref{duzine}.
+
+\begin{table}
+\centering
+\begin{tabular}{ | c | c | c | c |} \hline
+\textbf{Poruka} 			& \textbf{Dužina poruke}	&{Finalno rješenje}			&{Vrijednost greške} \\ \hline
+A 						& 1						& A 						& 0					\\ \hline
+TO 						& 2						& TO 						& 0					\\ \hline
+THE						& 3						& THE						& 0					\\ \hline
+STAR					& 4						& STAR						& 0					\\ \hline
+APRIL					& 5						& APRIL						& 0					\\ \hline
+BIRDIE					& 6						& BIRDIE					& 0					\\ \hline
+SOMEDAY				& 7						& SOMEDAY					& 0					\\ \hline
+COMPUTER				& 8						& COMPUTER				& 0					\\ \hline
+YESTERDAY				& 9						& YESTERDAY				& 0					\\ \hline
+BEPEACEFUL				& 10					&							&					\\ \hline
+INDIANOCEAN			& 11					&							&					\\ \hline
+THEGOLDENSUN			& 12					&							&					\\ \hline
+CONSTELLATION			& 13					&							&					\\ \hline
+CHEYENNEANTHEM		& 14					&							&					\\ \hline
+SEAGULLJONATHAN		& 15					&							&					\\ \hline
+\end{tabular}
+\caption{Različite vrijednosti grešaka za različite dužine poruka}
+\label{poruke}
+\end{table}
+
+\subsection{Rezultati izvršavanja za različite vrijednosti parametara}
+
+
+
+\subsection{Performanse algoritma}
 
 
 

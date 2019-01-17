@@ -2,7 +2,6 @@ import random
 import copy
 
 SIMILARITY = 0.001
-MESSAGE = "SOMEDAY"
 
 # find frequencies of characters in a message
 def findFrequenciesCharacters(x, characters):
@@ -418,7 +417,8 @@ class Particle:
                             permute.pop(k)
                             break
         # check if the particle moved to a better position
-        if not self.forbidden and self.criterionFunction(self.position) < self.bestSolution:
+        x = self.criterionFunction(self.position)
+        if self.criterionFunction(self.position) < self.bestSolution:
             self.coordinatesOfBestSolution = self.position
             self.bestSolution = self.criterionFunction(self.position)
         self.message = toString(self.coordinatesOfBestSolution)
@@ -426,7 +426,7 @@ class Particle:
 
 class SwarmOfParticles:
     def __init__(self, numberOfParticles, message, numberOfInformants, lowerBound, upperBound):
-        calculateMessageFrequencies(MESSAGE)
+        calculateMessageFrequencies(message)
         self.generation = 0
         self.canMove = True
         self.numberOfParticles = numberOfParticles
@@ -435,7 +435,7 @@ class SwarmOfParticles:
         self.particles = []
         # initialize all particles in the swarm
         for i in range(0, numberOfParticles):
-            coordinates = transpozition(MESSAGE)
+            coordinates = transpozition(message)
             initialVelocity = []
             for j in range(0, len(message)):
                 initialVelocity.append(True)
