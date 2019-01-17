@@ -427,6 +427,8 @@ class Particle:
 class SwarmOfParticles:
     def __init__(self, numberOfParticles, message, numberOfInformants, lowerBound, upperBound):
         calculateMessageFrequencies(MESSAGE)
+        self.generation = 0
+        self.canMove = True
         self.numberOfParticles = numberOfParticles
         self.dimensionality = len(message)
         self.numberOfInformants = numberOfInformants
@@ -472,7 +474,9 @@ class SwarmOfParticles:
             # reached the natural message - error is zero
             if self.bestValue == 0:
                 change = False
+                self.canMove = False
                 return change
+        self.generation += 1
         return change
 
 
@@ -527,22 +531,3 @@ for i in range(0, len(bigrams)):
 sortedCharacterFrequencies.sort()
 for i in range(0, len(sortedBigramFrequencies)):
     sortedBigramFrequencies[i].sort()'''
-
-
-                        # particles,         message,     informants, lowerBound, upperBound
-'''swarm = SwarmOfParticles(   20,              MESSAGE,         4,         0,          25)
-calculateMessageFrequencies(MESSAGE)
-print("Initialization. Best Solution: {}.".format(swarm.bestValue))
-# solutions are kept as integers so we print the string version of it
-print(toString(swarm.bestCoordinates))
-# starting iterations
-for i in range(0, 100):
-    if not swarm.moveAllParticles():
-        break
-    print("Iteration: {}. Best Solution: {} % difference.".format(i + 1, swarm.bestValue))
-    a = swarm.bestValue
-    b = toString(swarm.bestCoordinates)
-    print(toString(swarm.bestCoordinates))
-a = swarm.bestValue
-b = toString(swarm.bestCoordinates)
-print("Decoded message: {}.".format(toString(swarm.bestCoordinates)))'''
